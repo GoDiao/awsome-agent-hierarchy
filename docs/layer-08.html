@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>08. Security — Awesome AI Agent Hierarchy</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">Awesome Agent <i>Hierarchy</i></a>
+    <div class="nav-actions">
+      <div class="lang-group">
+        <button class="active" onclick="setLang('en')">EN</button>
+        <button onclick="setLang('zh')">中文</button>
+      </div>
+      <a href="https://github.com/tianX-ai/awsome-agent-hierarchy" class="nav-gh" target="_blank">GitHub ↗</a>
+    </div>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <a href="index.html"><span class="lang-en">All Layers</span><span class="lang-zh">所有层级</span></a>
+  <span>/</span>
+  <span class="lang-en">Security</span><span class="lang-zh">安全层</span>
+</div>
+
+<section class="hero">
+  <h1><span class="lang-en">Security</span><span class="lang-zh">安全层</span></h1>
+  <p><span class="lang-en">Sandbox, Permission, Keys, Guardrails, HITL</span><span class="lang-zh">沙箱、权限、密钥、护栏、人工审批</span></p>
+  <hr class="hero-rule">
+</section>
+
+<div class="search-area">
+  <input id="search" type="text" placeholder="Search repos..." oninput="handleSearch(this.value)">
+</div>
+
+<main class="main-area">
+<div class="sub"><div class="sub-head" onclick="toggleSub(this)">
+      <span class="sub-name"><span class="lang-en">Sandboxing — Isolated execution environments for AI agent security</span><span class="lang-zh">沙箱化 — AI 代理安全的隔离执行环境</span></span>
+      <span class="sub-cnt">8</span>
+      <span class="sub-arr">▶</span>
+    </div><div class="sub-body">
+      <div class="lang-en"><ul class="rl"><li><a href="https://github.com/daytonaio/daytona" target="_blank" rel="noopener">daytona</a> <img src="https://img.shields.io/github/stars/daytonaio/daytona?style=social" alt="Stars" loading="lazy"> - Secure and elastic infrastructure for running AI-generated code.</li><li><a href="https://github.com/e2b-dev/E2B" target="_blank" rel="noopener">E2B</a> <img src="https://img.shields.io/github/stars/e2b-dev/E2B?style=social" alt="Stars" loading="lazy"> - Open-source secure sandboxed cloud environment for enterprise-grade AI agents.</li><li><a href="https://github.com/superradcompany/microsandbox" target="_blank" rel="noopener">microsandbox</a> <img src="https://img.shields.io/github/stars/superradcompany/microsandbox?style=social" alt="Stars" loading="lazy"> - Secure, local and programmable sandboxes for AI agents.</li><li><a href="https://github.com/rivet-dev/sandbox-agent" target="_blank" rel="noopener">sandbox-agent</a> <img src="https://img.shields.io/github/stars/rivet-dev/sandbox-agent?style=social" alt="Stars" loading="lazy"> - Run coding agents in sandboxes over HTTP. Supports Claude Code, Codex, OpenCode.</li><li><a href="https://github.com/e2b-dev/desktop" target="_blank" rel="noopener">desktop</a> <img src="https://img.shields.io/github/stars/e2b-dev/desktop?style=social" alt="Stars" loading="lazy"> - E2B Desktop Sandbox for secure computer use with graphical environment.</li><li><a href="https://github.com/vndee/llm-sandbox" target="_blank" rel="noopener">llm-sandbox</a> <img src="https://img.shields.io/github/stars/vndee/llm-sandbox?style=social" alt="Stars" loading="lazy"> - Lightweight and portable LLM sandbox runtime Python library.</li><li><a href="https://github.com/Chen-zexi/open-ptc-agent" target="_blank" rel="noopener">open-ptc-agent</a> <img src="https://img.shields.io/github/stars/Chen-zexi/open-ptc-agent?style=social" alt="Stars" loading="lazy"> - Sandboxed code execution with MCP (Programmatic Tool Calling).</li><li><a href="https://github.com/kajogo777/the-agent-sandbox-taxonomy" target="_blank" rel="noopener">the-agent-sandbox-taxonomy</a> <img src="https://img.shields.io/github/stars/kajogo777/the-agent-sandbox-taxonomy?style=social" alt="Stars" loading="lazy"> - Open taxonomy and scoring framework for evaluating AI agent sandboxes.</li></ul></div>
+      <div class="lang-zh"><ul class="rl"><li><a href="https://github.com/daytonaio/daytona" target="_blank" rel="noopener">daytona</a> <img src="https://img.shields.io/github/stars/daytonaio/daytona?style=social" alt="Stars" loading="lazy"> - 运行 AI 生成代码的安全弹性基础设施。</li><li><a href="https://github.com/e2b-dev/E2B" target="_blank" rel="noopener">E2B</a> <img src="https://img.shields.io/github/stars/e2b-dev/E2B?style=social" alt="Stars" loading="lazy"> - 面向企业级 AI 代理的开源安全沙箱云环境。</li><li><a href="https://github.com/superradcompany/microsandbox" target="_blank" rel="noopener">microsandbox</a> <img src="https://img.shields.io/github/stars/superradcompany/microsandbox?style=social" alt="Stars" loading="lazy"> - 安全、本地和可编程的 AI 代理沙箱。</li><li><a href="https://github.com/rivet-dev/sandbox-agent" target="_blank" rel="noopener">sandbox-agent</a> <img src="https://img.shields.io/github/stars/rivet-dev/sandbox-agent?style=social" alt="Stars" loading="lazy"> - 通过 HTTP 在沙箱中运行编码代理。支持 Claude Code、Codex、OpenCode。</li><li><a href="https://github.com/e2b-dev/desktop" target="_blank" rel="noopener">desktop</a> <img src="https://img.shields.io/github/stars/e2b-dev/desktop?style=social" alt="Stars" loading="lazy"> - E2B 桌面沙箱，支持安全的图形化计算机使用。</li><li><a href="https://github.com/vndee/llm-sandbox" target="_blank" rel="noopener">llm-sandbox</a> <img src="https://img.shields.io/github/stars/vndee/llm-sandbox?style=social" alt="Stars" loading="lazy"> - 轻量级便携的大语言模型沙箱运行时 Python 库。</li><li><a href="https://github.com/Chen-zexi/open-ptc-agent" target="_blank" rel="noopener">open-ptc-agent</a> <img src="https://img.shields.io/github/stars/Chen-zexi/open-ptc-agent?style=social" alt="Stars" loading="lazy"> - 基于 MCP 的沙箱化代码执行（可编程工具调用）。</li><li><a href="https://github.com/kajogo777/the-agent-sandbox-taxonomy" target="_blank" rel="noopener">the-agent-sandbox-taxonomy</a> <img src="https://img.shields.io/github/stars/kajogo777/the-agent-sandbox-taxonomy?style=social" alt="Stars" loading="lazy"> - 评估 AI 代理沙箱的开放分类和评分框架。</li></ul></div>
+    </div></div><div class="sub"><div class="sub-head" onclick="toggleSub(this)">
+      <span class="sub-name"><span class="lang-en">Permission Control — Access control, authorization, and RBAC for AI agents</span><span class="lang-zh">权限控制 — AI 代理的访问控制、授权和 RBAC</span></span>
+      <span class="sub-cnt">4</span>
+      <span class="sub-arr">▶</span>
+    </div><div class="sub-body">
+      <div class="lang-en"><ul class="rl"><li><a href="https://github.com/affaan-m/agentshield" target="_blank" rel="noopener">agentshield</a> <img src="https://img.shields.io/github/stars/affaan-m/agentshield?style=social" alt="Stars" loading="lazy"> - AI agent security scanner. Detect vulnerabilities in agent configurations, MCP servers, and tool permissions.</li><li><a href="https://github.com/BakeLens/crust" target="_blank" rel="noopener">crust</a> <img src="https://img.shields.io/github/stars/BakeLens/crust?style=social" alt="Stars" loading="lazy"> - Open Source AI Agent Security Infrastructure — intercepts and blocks dangerous agent behaviors.</li><li><a href="https://github.com/aporthq/aport-agent-guardrails" target="_blank" rel="noopener">aport-agent-guardrails</a> <img src="https://img.shields.io/github/stars/aporthq/aport-agent-guardrails?style=social" alt="Stars" loading="lazy"> - Pre-action authorization guardrails for AI agents. Works with OpenAI, Claude Code, LangChain, CrewAI.</li><li><a href="https://github.com/logi-cmd/agent-guardrails" target="_blank" rel="noopener">agent-guardrails</a> <img src="https://img.shields.io/github/stars/logi-cmd/agent-guardrails?style=social" alt="Stars" loading="lazy"> - Merge gates and safety checks for AI coding agents via MCP.</li></ul></div>
+      <div class="lang-zh"><ul class="rl"><li><a href="https://github.com/affaan-m/agentshield" target="_blank" rel="noopener">agentshield</a> <img src="https://img.shields.io/github/stars/affaan-m/agentshield?style=social" alt="Stars" loading="lazy"> - AI 代理安全扫描器。检测代理配置、MCP 服务器和工具权限中的漏洞。</li><li><a href="https://github.com/BakeLens/crust" target="_blank" rel="noopener">crust</a> <img src="https://img.shields.io/github/stars/BakeLens/crust?style=social" alt="Stars" loading="lazy"> - 开源 AI 代理安全基础设施 — 拦截和阻止危险代理行为。</li><li><a href="https://github.com/aporthq/aport-agent-guardrails" target="_blank" rel="noopener">aport-agent-guardrails</a> <img src="https://img.shields.io/github/stars/aporthq/aport-agent-guardrails?style=social" alt="Stars" loading="lazy"> - AI 代理的预操作授权护栏。支持 OpenAI、Claude Code、LangChain、CrewAI。</li><li><a href="https://github.com/logi-cmd/agent-guardrails" target="_blank" rel="noopener">agent-guardrails</a> <img src="https://img.shields.io/github/stars/logi-cmd/agent-guardrails?style=social" alt="Stars" loading="lazy"> - 通过 MCP 实现 AI 编码代理的合并门禁和安全检查。</li></ul></div>
+    </div></div><div class="sub"><div class="sub-head" onclick="toggleSub(this)">
+      <span class="sub-name"><span class="lang-en">Key Management — API key rotation, secret management, and credential security</span><span class="lang-zh">密钥管理 — API 密钥轮换、密钥管理和凭证安全</span></span>
+      <span class="sub-cnt">6</span>
+      <span class="sub-arr">▶</span>
+    </div><div class="sub-body">
+      <div class="lang-en"><ul class="rl"><li><a href="https://github.com/izadoesdev/keypal" target="_blank" rel="noopener">keypal</a> <img src="https://img.shields.io/github/stars/izadoesdev/keypal?style=social" alt="Stars" loading="lazy"> - TypeScript library for secure API key management with hashing, expiration, and scopes.</li><li><a href="https://github.com/TensorBlock/forge" target="_blank" rel="noopener">forge</a> <img src="https://img.shields.io/github/stars/TensorBlock/forge?style=social" alt="Stars" loading="lazy"> - Self-hosted middleware unifying access to multiple AI providers with encrypted key management.</li><li><a href="https://github.com/voidmind-io/voidllm" target="_blank" rel="noopener">voidllm</a> <img src="https://img.shields.io/github/stars/voidmind-io/voidllm?style=social" alt="Stars" loading="lazy"> - Privacy-first LLM proxy with API key management, load balancing, and rate limiting.</li><li><a href="https://github.com/codeking-ai/cligate" target="_blank" rel="noopener">cligate</a> <img src="https://img.shields.io/github/stars/codeking-ai/cligate?style=social" alt="Stars" loading="lazy"> - Multi-protocol AI proxy with account pooling and API key management for Claude Code, Codex CLI, Gemini CLI.</li><li><a href="https://github.com/agentfence/agentfence" target="_blank" rel="noopener">agentfence</a> <img src="https://img.shields.io/github/stars/agentfence/agentfence?style=social" alt="Stars" loading="lazy"> - Automatic AI agent security testing — identifies prompt injection and secret leakage.</li><li><a href="https://github.com/piyush-tyagi-13/llm-keypool" target="_blank" rel="noopener">llm-keypool</a> <img src="https://img.shields.io/github/stars/piyush-tyagi-13/llm-keypool?style=social" alt="Stars" loading="lazy"> - Free-tier LLM API key pool with rotation, cooldown handling, and OpenAI-compatible proxy.</li></ul></div>
+      <div class="lang-zh"><ul class="rl"><li><a href="https://github.com/izadoesdev/keypal" target="_blank" rel="noopener">keypal</a> <img src="https://img.shields.io/github/stars/izadoesdev/keypal?style=social" alt="Stars" loading="lazy"> - TypeScript 库，支持哈希、过期和作用域的安全 API 密钥管理。</li><li><a href="https://github.com/TensorBlock/forge" target="_blank" rel="noopener">forge</a> <img src="https://img.shields.io/github/stars/TensorBlock/forge?style=social" alt="Stars" loading="lazy"> - 自托管中间件，统一多 AI 提供商访问并含加密密钥管理。</li><li><a href="https://github.com/voidmind-io/voidllm" target="_blank" rel="noopener">voidllm</a> <img src="https://img.shields.io/github/stars/voidmind-io/voidllm?style=social" alt="Stars" loading="lazy"> - 隐私优先的大语言模型代理，支持 API 密钥管理、负载均衡和限速。</li><li><a href="https://github.com/codeking-ai/cligate" target="_blank" rel="noopener">cligate</a> <img src="https://img.shields.io/github/stars/codeking-ai/cligate?style=social" alt="Stars" loading="lazy"> - 多协议 AI 代理，支持账户池和 API 密钥管理（Claude Code、Codex CLI、Gemini CLI）。</li><li><a href="https://github.com/agentfence/agentfence" target="_blank" rel="noopener">agentfence</a> <img src="https://img.shields.io/github/stars/agentfence/agentfence?style=social" alt="Stars" loading="lazy"> - 自动化 AI 代理安全测试 — 识别提示注入和密钥泄露。</li><li><a href="https://github.com/piyush-tyagi-13/llm-keypool" target="_blank" rel="noopener">llm-keypool</a> <img src="https://img.shields.io/github/stars/piyush-tyagi-13/llm-keypool?style=social" alt="Stars" loading="lazy"> - 免费层大语言模型 API 密钥池，支持轮换、冷却处理和 OpenAI 兼容代理。</li></ul></div>
+    </div></div><div class="sub"><div class="sub-head" onclick="toggleSub(this)">
+      <span class="sub-name"><span class="lang-en">Guardrails — Content safety, input/output filtering, and behavior constraints</span><span class="lang-zh">护栏 — 内容安全、输入输出过滤和行为约束</span></span>
+      <span class="sub-cnt">6</span>
+      <span class="sub-arr">▶</span>
+    </div><div class="sub-body">
+      <div class="lang-en"><ul class="rl"><li><a href="https://github.com/guardrails-ai/guardrails" target="_blank" rel="noopener">guardrails</a> <img src="https://img.shields.io/github/stars/guardrails-ai/guardrails?style=social" alt="Stars" loading="lazy"> - Adding guardrails to large language models.</li><li><a href="https://github.com/NVIDIA-NeMo/Guardrails" target="_blank" rel="noopener">Guardrails</a> <img src="https://img.shields.io/github/stars/NVIDIA-NeMo/Guardrails?style=social" alt="Stars" loading="lazy"> - NVIDIA NeMo Guardrails — programmable guardrails for LLM-based conversational systems.</li><li><a href="https://github.com/meta-llama/PurpleLlama" target="_blank" rel="noopener">PurpleLlama</a> <img src="https://img.shields.io/github/stars/meta-llama/PurpleLlama?style=social" alt="Stars" loading="lazy"> - Meta's tools to assess and improve LLM security.</li><li><a href="https://github.com/protectai/llm-guard" target="_blank" rel="noopener">llm-guard</a> <img src="https://img.shields.io/github/stars/protectai/llm-guard?style=social" alt="Stars" loading="lazy"> - The Security Toolkit for LLM Interactions (Protect AI).</li><li><a href="https://github.com/protectai/rebuff" target="_blank" rel="noopener">rebuff</a> <img src="https://img.shields.io/github/stars/protectai/rebuff?style=social" alt="Stars" loading="lazy"> - LLM Prompt Injection Detector.</li><li><a href="https://github.com/protectai/modelscan" target="_blank" rel="noopener">modelscan</a> <img src="https://img.shields.io/github/stars/protectai/modelscan?style=social" alt="Stars" loading="lazy"> - Protection against Model Serialization Attacks.</li></ul></div>
+      <div class="lang-zh"><ul class="rl"><li><a href="https://github.com/guardrails-ai/guardrails" target="_blank" rel="noopener">guardrails</a> <img src="https://img.shields.io/github/stars/guardrails-ai/guardrails?style=social" alt="Stars" loading="lazy"> - 为大语言模型添加护栏。</li><li><a href="https://github.com/NVIDIA-NeMo/Guardrails" target="_blank" rel="noopener">Guardrails</a> <img src="https://img.shields.io/github/stars/NVIDIA-NeMo/Guardrails?style=social" alt="Stars" loading="lazy"> - NVIDIA NeMo Guardrails — 大语言模型对话系统的可编程护栏。</li><li><a href="https://github.com/meta-llama/PurpleLlama" target="_blank" rel="noopener">PurpleLlama</a> <img src="https://img.shields.io/github/stars/meta-llama/PurpleLlama?style=social" alt="Stars" loading="lazy"> - Meta 的工具，用于评估和改进大语言模型安全性。</li><li><a href="https://github.com/protectai/llm-guard" target="_blank" rel="noopener">llm-guard</a> <img src="https://img.shields.io/github/stars/protectai/llm-guard?style=social" alt="Stars" loading="lazy"> - 大语言模型交互安全工具包（Protect AI）。</li><li><a href="https://github.com/protectai/rebuff" target="_blank" rel="noopener">rebuff</a> <img src="https://img.shields.io/github/stars/protectai/rebuff?style=social" alt="Stars" loading="lazy"> - 大语言模型提示注入检测器。</li><li><a href="https://github.com/protectai/modelscan" target="_blank" rel="noopener">modelscan</a> <img src="https://img.shields.io/github/stars/protectai/modelscan?style=social" alt="Stars" loading="lazy"> - 防御模型序列化攻击。</li></ul></div>
+    </div></div><div class="sub"><div class="sub-head" onclick="toggleSub(this)">
+      <span class="sub-name"><span class="lang-en">Human-in-the-Loop — Human approval, oversight, and feedback mechanisms</span><span class="lang-zh">人工审批循环 — 人工批准、监督和反馈机制</span></span>
+      <span class="sub-cnt">4</span>
+      <span class="sub-arr">▶</span>
+    </div><div class="sub-body">
+      <div class="lang-en"><ul class="rl"><li><a href="https://github.com/microsoft/magentic-ui" target="_blank" rel="noopener">magentic-ui</a> <img src="https://img.shields.io/github/stars/microsoft/magentic-ui?style=social" alt="Stars" loading="lazy"> - Experimental human-in-the-loop agent UI for browser and file system tasks with collaborative execution.</li><li><a href="https://github.com/BlazeUp-AI/Observal" target="_blank" rel="noopener">Observal</a> <img src="https://img.shields.io/github/stars/BlazeUp-AI/Observal?style=social" alt="Stars" loading="lazy"> - Observability and evaluation platform specifically built for human-in-the-loop agents.</li><li><a href="https://github.com/langchain-ai/agent-inbox" target="_blank" rel="noopener">agent-inbox</a> <img src="https://img.shields.io/github/stars/langchain-ai/agent-inbox?style=social" alt="Stars" loading="lazy"> - Inbox-style UX for interacting with human-in-the-loop agents — review and approve agent actions.</li><li><a href="https://github.com/renezander030/agent-approval-gate" target="_blank" rel="noopener">agent-approval-gate</a> <img src="https://img.shields.io/github/stars/renezander030/agent-approval-gate?style=social" alt="Stars" loading="lazy"> - Production approval-gate pattern: draft, validate, approve, dispatch, audit.</li></ul></div>
+      <div class="lang-zh"><ul class="rl"><li><a href="https://github.com/microsoft/magentic-ui" target="_blank" rel="noopener">magentic-ui</a> <img src="https://img.shields.io/github/stars/microsoft/magentic-ui?style=social" alt="Stars" loading="lazy"> - 实验性人工参与代理 UI，用于浏览器和文件系统任务。</li><li><a href="https://github.com/BlazeUp-AI/Observal" target="_blank" rel="noopener">Observal</a> <img src="https://img.shields.io/github/stars/BlazeUp-AI/Observal?style=social" alt="Stars" loading="lazy"> - 专门为人工参与代理构建的可观测性和评估平台。</li><li><a href="https://github.com/langchain-ai/agent-inbox" target="_blank" rel="noopener">agent-inbox</a> <img src="https://img.shields.io/github/stars/langchain-ai/agent-inbox?style=social" alt="Stars" loading="lazy"> - 与人工参与代理交互的收件箱式 UX — 审查和批准代理操作。</li><li><a href="https://github.com/renezander030/agent-approval-gate" target="_blank" rel="noopener">agent-approval-gate</a> <img src="https://img.shields.io/github/stars/renezander030/agent-approval-gate?style=social" alt="Stars" loading="lazy"> - 生产审批门模式：草稿、验证、批准、分发、审计。</li></ul></div>
+    </div></div><div class="lang-en"><p class="md-p">---</p></div><div class="lang-zh"><p class="md-p">---</p></div>
+</main>
+
+<div style="max-width:var(--max-w);margin:0 auto;padding:0 2rem 2rem;font-size:0.82rem;line-height:2.2">
+  <div class="lang-en"><a href="layer-01.html">Foundation Layer</a> <span style="color:var(--text-3)">·</span> <a href="layer-02.html">Agent Brain</a> <span style="color:var(--text-3)">·</span> <a href="layer-03.html">Tool Layer</a> <span style="color:var(--text-3)">·</span> <a href="layer-04.html">Agent Workflows</a> <span style="color:var(--text-3)">·</span> <a href="layer-05.html">Multi-Agent Systems</a> <span style="color:var(--text-3)">·</span> <a href="layer-06.html">Infrastructure</a> <span style="color:var(--text-3)">·</span> <a href="layer-07.html">Observability</a> <span style="color:var(--text-3)">·</span> <a href="layer-08.html" style="font-weight:700;color:var(--accent)">Security</a></div>
+  <div class="lang-zh"><a href="layer-01.html">基础层</a> <span style="color:var(--text-3)">·</span> <a href="layer-02.html">代理大脑</a> <span style="color:var(--text-3)">·</span> <a href="layer-03.html">工具层</a> <span style="color:var(--text-3)">·</span> <a href="layer-04.html">代理工作流</a> <span style="color:var(--text-3)">·</span> <a href="layer-05.html">多代理系统</a> <span style="color:var(--text-3)">·</span> <a href="layer-06.html">基础设施</a> <span style="color:var(--text-3)">·</span> <a href="layer-07.html">可观测性</a> <span style="color:var(--text-3)">·</span> <a href="layer-08.html" style="font-weight:700;color:var(--accent)">安全层</a></div>
+</div>
+
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<footer class="foot">
+  <span class="lang-en">Content from </span><span class="lang-zh">内容来自 </span>README.md / README-zh.md
+</footer>
+
+<script>
+function setLang(l) {
+  const btns = document.querySelectorAll('.lang-group button');
+  btns.forEach(b => b.classList.remove('active'));
+  btns[l === 'en' ? 0 : 1].classList.add('active');
+  document.body.classList.toggle('lang-zh-active', l === 'zh');
+  document.documentElement.lang = l === 'zh' ? 'zh' : 'en';
+  // Update search placeholder
+  document.getElementById('search').placeholder = l === 'zh' ? '搜索仓库...' : 'Search repos...';
+  localStorage.setItem('lang', l);
+}
+function toggleSub(el) {
+  el.classList.toggle('open');
+  el.nextElementSibling.classList.toggle('open');
+}
+function handleSearch(q) {
+  q = q.toLowerCase().trim();
+  document.querySelectorAll('ul.rl li').forEach(li => {
+    li.style.display = (!q || li.textContent.toLowerCase().includes(q)) ? '' : 'none';
+  });
+  document.querySelectorAll('.sub').forEach(sub => {
+    if (!q) { sub.style.display = ''; return; }
+    const has = Array.from(sub.querySelectorAll('ul.rl li')).some(li => li.style.display !== 'none');
+    sub.style.display = has ? '' : 'none';
+  });
+}
+const saved = localStorage.getItem('lang');
+if (saved === 'zh') setLang('zh');
+window.addEventListener('scroll', () => {
+  document.getElementById('btt').classList.toggle('show', window.scrollY > 300);
+});
+</script>
+</body>
+</html>
