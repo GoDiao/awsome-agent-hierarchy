@@ -229,7 +229,7 @@ def check_links() -> None:
         audit = json.loads(audit_path.read_text(encoding="utf-8"))
         for repo, payload in audit.items():
             if isinstance(payload, dict) and payload.get("status") == 200:
-                cache.setdefault(repo, payload)
+                cache[repo] = payload
     token = os.environ.get("GITHUB_TOKEN")
     missing = [repo for repo in repos if not (cache.get(repo) and cache[repo].get("status") == 200)]
 

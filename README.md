@@ -5,6 +5,32 @@ An architectural map of AI agent tooling across foundation models, agent brains,
 > **Disclaimer:** This list is a work in progress. Contributions are welcome!
 > **Curation rule:** Each third-level topic lists up to 10 representative GitHub repositories. Fewer than 10 is fine when the category does not yet have enough strong, maintained projects.
 
+**AI Agent Ecosystem Map**
+
+```mermaid
+flowchart TB
+    L1["01. Foundation Layer<br/>LLMs · Prompt Engineering · Context"]
+    L2["02. Agent Brain<br/>Planning · Reasoning · Decision Engine"]
+    L3["03. Tool Layer<br/>Search · Browser · Code · API · DB · Files"]
+    L4["04. Agent Workflows<br/>Research · Coding · Sales · Support · Content"]
+    L5["05. Multi-Agent Systems<br/>Manager · Worker · Reviewer · Specialist · Memory Bus"]
+    L6["06. Infrastructure<br/>LangGraph · CrewAI · Agents SDK · MCP · Docker · Kubernetes"]
+    L7["07. Observability<br/>Logging · Tracing · Evaluation · Hallucination · Cost"]
+    L8["08. Security<br/>Sandboxing · Permissions · Keys · Guardrails · Human-in-the-Loop"]
+
+    L1 --> L2 --> L3 --> L4 --> L5
+    L6 --> L2
+    L6 --> L3
+    L6 --> L4
+    L7 --> L2
+    L7 --> L4
+    L7 --> L5
+    L8 --> L2
+    L8 --> L3
+    L8 --> L4
+    L8 --> L5
+```
+
 ## Contents
 
 - [01. Foundation Layer](#01-foundation-layer)
