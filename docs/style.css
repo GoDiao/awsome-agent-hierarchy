@@ -182,6 +182,34 @@ a:hover { text-decoration: underline; text-underline-offset: 2px; }
 .search-area input:focus { border-color: var(--accent); }
 .search-area input::placeholder { color: var(--text-3); }
 
+.tag-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.tag-filter button {
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-2);
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: 7px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.tag-filter button:hover,
+.tag-filter button.active {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-bg);
+}
+
 /* --- MAIN CONTENT --- */
 .main-area {
   max-width: var(--max-w); margin: 0 auto;
@@ -195,10 +223,14 @@ a:hover { text-decoration: underline; text-underline-offset: 2px; }
 
 .sub-head {
   display: flex; align-items: center; gap: 10px;
+  width: 100%;
   padding: 10px 14px;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 6px;
+  color: var(--text);
+  font-family: var(--sans);
+  text-align: left;
   cursor: pointer;
   transition: all 0.15s;
 }
@@ -267,6 +299,34 @@ ul.rl li a:hover { text-decoration: underline; text-underline-offset: 2px; }
 ul.rl li img {
   vertical-align: middle; height: 16px; margin: 0 3px;
 }
+
+.tags {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  vertical-align: middle;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text-2);
+  font-family: var(--mono);
+  font-size: 0.64rem;
+  font-weight: 500;
+  line-height: 1;
+  padding: 3px 6px;
+  border-radius: 999px;
+}
+
+.tag-official { color: #1f5f7a; background: #eef7fb; border-color: #c8e2ec; }
+.tag-framework { color: #2D5A45; background: #edf6f1; border-color: #cde3d7; }
+.tag-example { color: #7a5a1f; background: #fbf6e8; border-color: #ead9aa; }
+.tag-research { color: #60427a; background: #f2edf8; border-color: #d9c9e8; }
+.tag-infra { color: #5d4b35; background: #f4f1ed; border-color: #ded4c8; }
+.tag-archived-classic { color: #7a3b3b; background: #faeeee; border-color: #e7c8c8; }
 
 /* --- PROVIDER BLOCK --- */
 .prov {

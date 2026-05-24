@@ -1,0 +1,5 @@
+.omc/
+gh_k8s_extra.json
+__pycache__/
+*.py[cod]
+

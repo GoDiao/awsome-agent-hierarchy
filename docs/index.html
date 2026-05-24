@@ -17,17 +17,15 @@
         <button class="active" onclick="setLang('en')">EN</button>
         <button onclick="setLang('zh')">中文</button>
       </div>
-      <a href="https://github.com/tianX-ai/awsome-agent-hierarchy" class="nav-gh" target="_blank">GitHub ↗</a>
+      <a href="https://github.com/tianX-ai/awsome-agent-hierarchy" class="nav-gh" target="_blank" rel="noopener">GitHub ^</a>
     </div>
   </div>
 </nav>
-
 <section class="hero">
   <h1><span class="lang-en">The AI Agent Stack</span><span class="lang-zh">AI 代理技术栈</span></h1>
-  <p><span class="lang-en">A curated list of tools, libraries, and frameworks for building AI Agent systems, organized by 8 architectural layers.</span><span class="lang-zh">AI Agent 系统构建工具、库和框架的精选列表，按 8 个架构层级分类整理。</span></p>
+  <p><span class="lang-en">A curated, tagged map of tools, libraries, and frameworks for building AI agent systems.</span><span class="lang-zh">AI Agent 系统构建工具、库和框架的精选标签地图。</span></p>
   <hr class="hero-rule">
 </section>
-
 <div class="layer-grid">
 
     <a class="layer-card" href="layer-01.html">
@@ -53,7 +51,7 @@
     <a class="layer-card" href="layer-05.html">
       <div class="layer-card-idx">05</div>
       <div class="layer-card-title"><span class="lang-en">Multi-Agent Systems</span><span class="lang-zh">多代理系统</span></div>
-      <div class="layer-card-desc"><span class="lang-en">Manager, Worker, Reviewer, Specialist, Memory</span><span class="lang-zh">管理、工作者、审查、专家、内存</span></div>
+      <div class="layer-card-desc"><span class="lang-en">Manager, Worker, Reviewer, Specialist, Memory</span><span class="lang-zh">管理、工作者、审查、专家、记忆</span></div>
     </a>
     <a class="layer-card" href="layer-06.html">
       <div class="layer-card-idx">06</div>
@@ -71,12 +69,8 @@
       <div class="layer-card-desc"><span class="lang-en">Sandbox, Permission, Keys, Guardrails, HITL</span><span class="lang-zh">沙箱、权限、密钥、护栏、人工审批</span></div>
     </a>
 </div>
-
-<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
-
-<footer class="foot">
-  <span class="lang-en">Content from </span><span class="lang-zh">内容来自 </span>README.md / README-zh.md
-</footer>
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">^</button>
+<footer class="foot"><span class="lang-en">Content from </span><span class="lang-zh">内容来自 </span>README.md / README-zh.md</footer>
 
 <script>
 function setLang(l) {
@@ -85,13 +79,22 @@ function setLang(l) {
   btns[l === 'en' ? 0 : 1].classList.add('active');
   document.body.classList.toggle('lang-zh-active', l === 'zh');
   document.documentElement.lang = l === 'zh' ? 'zh' : 'en';
+  const input = document.getElementById('search');
+  if (input) input.placeholder = l === 'zh' ? '搜索仓库...' : 'Search repositories...';
   localStorage.setItem('lang', l);
 }
+function toggleSub(el) {
+  el.classList.toggle('open');
+  el.nextElementSibling.classList.toggle('open');
+}
+
 const saved = localStorage.getItem('lang');
 if (saved === 'zh') setLang('zh');
 window.addEventListener('scroll', () => {
-  document.getElementById('btt').classList.toggle('show', window.scrollY > 300);
+  const btt = document.getElementById('btt');
+  if (btt) btt.classList.toggle('show', window.scrollY > 300);
 });
 </script>
+
 </body>
 </html>

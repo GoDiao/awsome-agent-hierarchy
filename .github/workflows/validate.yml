@@ -1,0 +1,30 @@
+name: Validate
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate structure, tags, bilingual sync, and docs features
+        run: python scripts/validate.py
+      - name: Check GitHub links
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python scripts/validate.py --check-links
+      - name: Check generated docs freshness
+        run: python scripts/validate.py --check-docs
+      - name: Ensure no generated diff
+        run: git diff --exit-code
+
