@@ -30,6 +30,8 @@ MOJIBAKE_MARKERS = [
     "\u9438",
     "\u95ab",
 ]
+ASCII_PUNCT = "".join(chr(i) for i in range(128) if not chr(i).isalnum() and chr(i) not in [" ", "-"])
+ANCHOR_TRANS = str.maketrans("", "", ASCII_PUNCT)
 
 
 def fail(message: str) -> None:
@@ -39,6 +41,41 @@ def fail(message: str) -> None:
 
 def read(path: str) -> str:
     return (ROOT / path).read_text(encoding="utf-8")
+
+
+def github_anchor(title: str) -> str:
+    anchor = title.strip().lower().translate(ANCHOR_TRANS)
+    anchor = re.sub(r"\s+", "-", anchor)
+    return re.sub(r"-+", "-", anchor).strip("-")
+
+
+def check_toc(path: str, toc_title: str, final_titles: set[str]) -> None:
+    lines = read(path).splitlines()
+    try:
+        start = lines.index(f"## {toc_title}")
+    except ValueError:
+        fail(f"{path} missing {toc_title} section")
+    try:
+        end = next(i for i in range(start + 1, len(lines)) if lines[i].strip() == "---")
+    except StopIteration:
+        fail(f"{path} missing end marker after {toc_title}")
+
+    actual: list[tuple[int, str]] = []
+    for line in lines[end + 1 :]:
+        if line.startswith("## "):
+            title = line[3:].strip()
+            if re.match(r"^\d{2}\. ", title) or title in final_titles:
+                actual.append((2, title))
+        elif line.startswith("### "):
+            actual.append((3, line[4:].strip()))
+
+    expected = []
+    for level, title in actual:
+        indent = "  " if level == 3 else ""
+        expected.append(f"{indent}- [{title}](#{github_anchor(title)})")
+    toc = [line for line in lines[start + 2 : end] if line.strip()]
+    if toc != expected:
+        fail(f"{path} Contents/目录 is out of sync with headings")
 
 
 def parse_blocks(path: str) -> list[dict]:
@@ -86,6 +123,9 @@ def check_encoding() -> None:
 
 
 def check_readmes() -> None:
+    check_toc("README.md", "Contents", {"Contributing", "License"})
+    check_toc("README-zh.md", "\u76ee\u5f55", {"\u8d21\u732e\u6307\u5357", "\u8bb8\u53ef\u8bc1"})
+
     en = parse_blocks("README.md")
     zh = parse_blocks("README-zh.md")
     if len(en) != len(zh):
