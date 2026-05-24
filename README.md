@@ -1,5 +1,7 @@
 # Awesome AI Agent Framework [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
+[English](README.md) | [中文](README-zh.md)
+
 An architectural map of AI agent tooling across foundation models, agent brains, tools, workflows, multi-agent systems, infrastructure, observability, and security.
 
 > **Disclaimer:** This list is a work in progress. Contributions are welcome!
@@ -7,29 +9,7 @@ An architectural map of AI agent tooling across foundation models, agent brains,
 
 **AI Agent Ecosystem Map**
 
-```mermaid
-flowchart TB
-    L1["01. Foundation Layer<br/>LLMs · Prompt Engineering · Context"]
-    L2["02. Agent Brain<br/>Planning · Reasoning · Decision Engine"]
-    L3["03. Tool Layer<br/>Search · Browser · Code · API · DB · Files"]
-    L4["04. Agent Workflows<br/>Research · Coding · Sales · Support · Content"]
-    L5["05. Multi-Agent Systems<br/>Manager · Worker · Reviewer · Specialist · Memory Bus"]
-    L6["06. Infrastructure<br/>LangGraph · CrewAI · Agents SDK · MCP · Docker · Kubernetes"]
-    L7["07. Observability<br/>Logging · Tracing · Evaluation · Hallucination · Cost"]
-    L8["08. Security<br/>Sandboxing · Permissions · Keys · Guardrails · Human-in-the-Loop"]
-
-    L1 --> L2 --> L3 --> L4 --> L5
-    L6 --> L2
-    L6 --> L3
-    L6 --> L4
-    L7 --> L2
-    L7 --> L4
-    L7 --> L5
-    L8 --> L2
-    L8 --> L3
-    L8 --> L4
-    L8 --> L5
-```
+![Awesome Agent Hierarchy ecosystem framework diagram](docs/awesome-agent-hierarchy.png)
 
 ## Contents
 

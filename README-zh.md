@@ -1,5 +1,7 @@
 # Awesome AI Agent 全栈框架 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
+[English](README.md) | [中文](README-zh.md)
+
 一张 AI Agent 工具体系的架构地图，覆盖基础模型、代理大脑、工具层、工作流、多代理系统、基础设施、可观测性和安全。
 
 > **声明：** 本列表正在持续建设中，欢迎贡献！
@@ -7,29 +9,7 @@
 
 **AI Agent 生态框架图**
 
-```mermaid
-flowchart TB
-    L1["01. 基础层<br/>大语言模型 · 提示工程 · 上下文"]
-    L2["02. 代理大脑<br/>规划 · 推理 · 决策引擎"]
-    L3["03. 工具层<br/>搜索 · 浏览器 · 代码 · API · 数据库 · 文件"]
-    L4["04. 代理工作流<br/>研究 · 编码 · 销售 · 客服 · 内容"]
-    L5["05. 多代理系统<br/>管理 · 工作者 · 审查 · 专家 · 共享内存总线"]
-    L6["06. 基础设施<br/>LangGraph · CrewAI · Agents SDK · MCP · Docker · Kubernetes"]
-    L7["07. 可观测性<br/>日志 · 追踪 · 评估 · 幻觉 · 成本"]
-    L8["08. 安全层<br/>沙箱 · 权限 · 密钥 · 护栏 · 人工审批"]
-
-    L1 --> L2 --> L3 --> L4 --> L5
-    L6 --> L2
-    L6 --> L3
-    L6 --> L4
-    L7 --> L2
-    L7 --> L4
-    L7 --> L5
-    L8 --> L2
-    L8 --> L3
-    L8 --> L4
-    L8 --> L5
-```
+![Awesome Agent Hierarchy 生态框架图](docs/awesome-agent-hierarchy.png)
 
 ## 目录
 
