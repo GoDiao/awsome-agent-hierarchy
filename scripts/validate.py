@@ -164,15 +164,71 @@ def check_docs_features() -> None:
     html_files = sorted((ROOT / "docs").glob("layer-*.html"))
     if len(html_files) != 8:
         fail(f"Expected 8 layer pages, found {len(html_files)}")
+    index = read("docs/index.html")
+    for needle in [
+        "framework-hero",
+        "awesome-agent-hierarchy.png",
+        "stats-row",
+        "global-search",
+        "home-search",
+        "home-results",
+        "setHomeTag(",
+        "renderHomeSearch()",
+        "Submit a Repo",
+        "CONTRIBUTING.md",
+        'property="og:image"',
+        "https://github.com/GoDiao/awsome-agent-hierarchy",
+    ]:
+        if needle not in index:
+            fail(f"docs/index.html missing ecosystem map feature marker: {needle}")
+    if "https://github.com/tianX-ai/awsome-agent-hierarchy" in index:
+        fail("docs/index.html still points to old repository URL")
     for path in html_files:
         text = path.read_text(encoding="utf-8")
-        for needle in ["tag-filter", "data-tags=", "setTag(", "handleSearch()"]:
+        for needle in [
+            "layer-hero",
+            "layer-nav",
+            "topic-actions",
+            "Expand all",
+            "Collapse all",
+            "repo-card",
+            "tag-filter",
+            "data-tags=",
+            "setTag(",
+            "handleSearch()",
+            'property="og:image"',
+            "https://github.com/GoDiao/awsome-agent-hierarchy",
+        ]:
             if needle not in text:
                 fail(f"{path.relative_to(ROOT)} missing docs feature marker: {needle}")
+        if "https://github.com/tianX-ai/awsome-agent-hierarchy" in text:
+            fail(f"{path.relative_to(ROOT)} still points to old repository URL")
+    layer_01 = read("docs/layer-01.html")
+    for needle in ["provider-group", "provider-actions", "Expand all providers", "Collapse all providers", "provider-body open"]:
+        if needle not in layer_01:
+            fail(f"docs/layer-01.html missing provider accordion marker: {needle}")
+    if "0 models" in layer_01:
+        fail("docs/layer-01.html has an empty provider accordion")
     css = read("docs/style.css")
-    for needle in [".tag-official", ".tag-framework", ".tag-example", ".tag-research", ".tag-infra", ".tag-archived-classic"]:
+    for needle in [
+        ".framework-hero",
+        ".stats-row",
+        ".global-search",
+        ".layer-card",
+        ".layer-hero",
+        ".topic-actions",
+        ".repo-card",
+        ".provider-group",
+        ".provider-body",
+        ".tag-official",
+        ".tag-framework",
+        ".tag-example",
+        ".tag-research",
+        ".tag-infra",
+        ".tag-archived-classic",
+    ]:
         if needle not in css:
-            fail(f"docs/style.css missing tag style: {needle}")
+            fail(f"docs/style.css missing ecosystem map style: {needle}")
 
 
 def check_docs_fresh() -> None:
